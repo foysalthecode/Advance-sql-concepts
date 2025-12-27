@@ -78,3 +78,13 @@
     $$
 
     call increase_low_salary('HR')
+
+# INDEX
+
+    EXPLAIN ANALYZE
+    select * from users where email = 'foysal@mail.com'
+
+    -- create indexing
+
+    create index idx_users_email
+    on users(email)

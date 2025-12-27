@@ -18,9 +18,7 @@
     select max(salary) from employees where department = 'HR'
     )
 
-# FUNCTION OR PROCEDURE
-
-    Function ke procedure bole sql er language a
+# FUNCTION
 
 ## show how many employees are there by function
 
@@ -45,3 +43,18 @@
     $$
 
     select delete_emp_id(5) --> this will delete the employee whos id is 5
+
+# PROCEDURE
+
+    create procedure delete_emp_byid(emp_id int)
+    language plpgsql
+    as
+    $$
+    begin
+    delete from employees where id = emp_id;
+    end;
+    $$
+
+    call delete_emp_byid(4)
+
+    <!-- we can't use "select" method in procedure so we have to use "call" -->
